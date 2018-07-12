@@ -104,6 +104,7 @@ struct HandlerData<'a, T: 'a> {
 
 pub struct WebView<'a, T: 'a>(PhantomData<&'a mut T>);
 
+#[derive(Clone)]
 pub struct MyUnique<T>(*mut T);
 unsafe impl<T> Send for MyUnique<T> {}
 unsafe impl<T> Sync for MyUnique<T> {}
